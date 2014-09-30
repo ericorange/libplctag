@@ -482,6 +482,9 @@ extern int thread_create(thread_p *t, thread_func_t func, int stacksize, void *a
         return PLCTAG_ERR_THREAD_CREATE;
     }
 
+	/* mark as initialized */
+	(*t)->initialized = 1;
+
 	/*pdebug("Done.");*/
 
 	return PLCTAG_STATUS_OK;
